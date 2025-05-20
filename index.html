@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONITORING AND EVALUATION COMMITTEE OF FATHER'S HEART CHAPEL INTERNATIONAL</title>
+    <style>
+        :root {
+            --primary: #7b112c;      /* Wine */
+            --secondary: #c0392b;    /* Red */
+            --accent: #fff;          /* White */
+            --light: #f9f9f9;
+            --tab-bg: #fff;
+            --tab-active: #c0392b;
+            --tab-hover: #e57373;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(123, 17, 44, 0.92); /* Wine with transparency */
+            color: var(--accent);
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            letter-spacing: 1px;
+        }
+        header img {
+            max-height: 70px;
+            margin-bottom: 10px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: var(--accent);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(123,17,44,0.10);
+            overflow: hidden;
+        }
+        .tabs {
+            display: flex;
+            background: var(--primary);
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 18px 0;
+            background: var(--primary);
+            border: none;
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
+            outline: none;
+        }
+        .tab-btn:hover {
+            background: var(--tab-hover);
+            color: var(--accent);
+        }
+        .tab-btn.active {
+            background: var(--tab-active);
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .tab-content {
+            padding: 35px 30px;
+            display: none;
+            background: var(--tab-bg);
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+        }
+        .mission-box {
+            background: var(--light);
+            padding: 20px;
+            border-left: 5px solid var(--secondary);
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 7px;
+            box-shadow: 0 2px 8px rgba(123,17,44,0.08);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--accent);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background: var(--primary);
+            color: var(--accent);
+        }
+        tr:hover {
+            background: #f5f5f5;
+        }
+        .notice {
+            background: #fdeaea;
+            border-left: 5px solid var(--secondary);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .file-box {
+            border: 2px dashed #c0392b;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 7px;
+            background: #fff5f5;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(123, 17, 44, 0.92);
+            color: var(--accent);
+            margin-top: 30px;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 700px) {
+            .container { width: 98%; padding: 0; }
+            .tab-content { padding: 18px 5px; }
+            .gallery { flex-direction: column; align-items: center; }
+        }
+        header h1 {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+header h1 {
+    color: white; /* Wine color */
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Uncomment and replace with your logo if available -->
+        <!-- <img src="your-logo.png" alt="Church Logo"> -->
+        <h1>MONITORING & EVALUATION COMMITTEE</h1>
+        <p>Father's Heart Chapel International</p>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('home', event)">Home</button>
+            <button class="tab-btn" onclick="openTab('members', event)">Members & Tasks</button>
+            <button class="tab-btn" onclick="openTab('notices', event)">Notices</button>
+            <button class="tab-btn" onclick="openTab('records', event)">Records</button>
+        </div>
+
+        <!-- HOME TAB -->
+        <div id="home" class="tab-content active">
+            <h2>Welcome to Our Church</h2>
+            <p>Founded in [Year] by [Founder's Name], Father's Heart Chapel International has been a beacon of hope and faith in our community. Our mission is to spread God's love through service, fellowship, and worship.</p>
+            
+            <div class="gallery">
+                <img src="https://via.placeholder.com/200x150?text=Church+Building" alt="Church Building">
+                <img src="https://via.placeholder.com/200x150?text=Founder" alt="Founder">
+                <img src="https://via.placeholder.com/200x150?text=Outreaches" alt="Outreach Programs">
+            </div>
+
+            <div class="mission-box">
+                <h3>Our Vision</h3>
+                <p>To build a Christ-centered community that transforms lives through faith and service.</p>
+            </div>
+
+            <div class="mission-box">
+                <h3>Committee Mission</h3>
+                <p>To ensure effective implementation and evaluation of church programs through systematic monitoring and feedback mechanisms.</p>
+            </div>
+        </div>
+
+        <!-- MEMBERS & TASKS TAB -->
+        <div id="members" class="tab-content">
+            <h2>Committee Members</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Contact</th>
+                    <th>Email Address</th>
+                    
+                </tr>
+                <tr>
+                    <td>Pastor Okra Banahene</td>
+                    <td>BOSS Boss</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Miss Doris Nti Agyekum</td>
+                    <td>Boss</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Sir Calvin Deladem Yao Herchel</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Sir Nana Baffour Nsenkyire Sarpong Asante</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Sir Kingsley Adomako</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Sir Jucal</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Sir Tonto Brain</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Miss Rebecca</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Miss Fidel</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Sir Quansah Randy</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Sir Steven</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+                <tr>
+                    <td>Sir Jerubel Gideon</td>
+                    <td>Member</td>
+                    <td>..</td>
+                    <td>..</td>
+                </tr>
+
+                <!-- Add more rows as needed -->
+            </table>
+
+            <h2 style="margin-top: 40px;">Task Assignments</h2>
+            <table>
+                <tr>
+                    <th>Task</th>
+                    <th>Assigned To</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Write agenda of upcoming's meeting</td>
+                    <td>Nana Baffour Nsenkyire Sarpong Asante</td>
+                    <td>June 15, 2025</td>
+                    <td>In Progress</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </div>
+
+        <!-- NOTICES TAB -->
+        <div id="notices" class="tab-content">
+            <h2>Announcements</h2>
+            
+            <div class="notice">
+                <h3>Monthly Meeting</h3>
+                <p>Next committee meeting will be held on <strong>May 24th at 5:30 PM</strong> on our WhatsApp page.</p>
+                <small>Posted: May 25, 2025</small>
+            </div>  <!-- Add more notices as needed -->
+
+
+        <!-- RECORDS TAB -->
+        <div id="records" class="tab-content">
+            <h2>Member Check-up Records</h2>
+            <p>This section contains records of members we've checked up on:</p>
+            
+            <div class="file-box">
+                <h3>Excel Records</h3>
+                <p>Click below to view/download our check-up records:</p>
+                <a href="#" style="display: inline-block; margin: 10px; padding: 10px 15px; background: var(--secondary); color: white; text-decoration: none; border-radius: 5px;">Download Excel File</a>
+                <p><em>or</em></p>
+                <p>Embed a live Google Sheet here by pasting its iframe code:</p>
+                <!-- Replace this with your Google Sheet embed code -->
+                <iframe src="https://docs.google.com/spreadsheets/d/your-sheet-id/edit?usp=sharing" width="100%" height="400px" frameborder="0"></iframe>
+            </div>
+
+            <div class="file-box">
+                <h3>Word Document Reports</h3>
+                <p>Access our monthly reports:</p>
+                <a href="#" style="display: inline-block; margin: 5px; padding: 8px 12px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px;">May 2025 Report</a>
+                <a href="#" style="display: inline-block; margin: 5px; padding: 8px 12px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px;">April 2025 Report</a>
+                <!-- Add more report links as needed -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Father's Heart Chapel International - Monitoring & Evaluation Committee</p>
+    </footer>
+
+    <script>
+        function openTab(tabName, event) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            // Remove active class from all buttons
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            // Show current tab and mark button as active
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
